@@ -1,38 +1,62 @@
-REQUISITOS DO SISTEMA
+# 📅 **Projeto de Agendamento de Laboratório**
 
-Requisitos Funcionais
-- O sistema deve permitir o cadastro de professores.
-- Professores cadastrados devem conseguir fazer login no sistema.
-- Professores devem poder visualizar os horários disponíveis e ocupados de cada laboratório.
-- Professores podem reservar horários para uso do laboratório.
-- O sistema deve permitir editar ou cancelar reservas.
-- Deve haver a persistência de dados para garantir que as informações de login e agendamentos sejam salvas.
-- Professores devem conseguir ver os horários reservados por outros professores.
+Bem-vindo(a) ao meu repositório do **Projeto de Agendamento de Laboratório**! Este projeto simula um sistema de agendamento de horários para laboratórios, permitindo que professores reservem horários para aulas em diferentes laboratórios de uma instituição. 💻
 
-Requisitos Não Funcionais
-- O sistema deve ser amigável e de fácil uso, utilizando uma interface gráfica simples e intuitiva.
-- As informações de login e agendamento devem ser armazenadas de forma segura, utilizando persistência de dados.
-- O sistema deve garantir que não haja conflitos de horários entre os professores.
-- Deve ser garantida a responsividade e eficiência na interação com o usuário, sem atrasos significativos.
-Estrutura do Sistema
-A estrutura do sistema é criada no pacote “ifpb.edu.br.main”, a partir desse pacote, todas as classes de controller, view, dao e model são devidamente separadas.
-No package controller estão contidas as classes controlador e dados. 
-- Classe controlador: Conta com chamadas de classes do sistema, como “Dados”, “Serializador”, “Controlador”, “Professor”, “BlocoDeHorario”, “CalendarioSemanal” e “InfoBloco”.
-Essas classes representam os dados onde serão armazenados e criados e estão sendo chamadas na classe controlador para que a mesma consiga controlar os métodos de funcionamento dos dados das classes. 
-- Classe dados: Conta com a incialização das listas de professor e disciplina para atualizar-las a cada novo dado adicionado no sistema.
-No package view estão contidas as classes BlocoDeHorario, BotaoAlocacao, CalendarioSemanal, GerenciadorDeTelas, InfoBlocos, JanelaCalendario, TelaCadastro, TelaLogin e TelaPrincipal.
-- Classe BlocoDeHorario: Conta com a incialização da matriz contendo os blocos de horário e a chamada da classe "InfoBlocos", para que as informações necessárias estejam dentro dos blocos criados na classe.
-- Classe BotaoAlocacao: Conta com dois atributos strings, disciplina e professor, para que essas sejam as informações presentes dentro do blocoDeHorario quando o horário for reservado por determinado professor.
-- Classe CalendarioSemanal: Conta com a lista de BlocoDeHorario e o int semanaAtual, iniciando de fato os blocos de horário dentro de um for e métodos para que esses hórarios sejam atualizados conforme as semanas e meses, como por exemplo o método "atualizarMes".
-- Classe GerenciadorDeTelas: Onde fica todo o gerenciamento de visualização de telas, onde organiza toda a ordem de aparição das telas e suas devidas validações para avançar de uma para a outra.
-- Classe InfoBlocos: Conta com a criação das matrizes de disciplina e professor e sua alocação no bloco, se está ocupado ou não.
-- Classe JanelaCalendario: Onde é organizado todo o componente de agendamento utilizando as classes de "InfoBloco", "BlocoDeHorario", "CalendarioSemanal" e "BotaoAlocacao". 
-- Classe TelaCadastro: Conta com os métodos e chamadas de classes necessárias para a criação da tela de cadastro, para cadastrar e salvar os dados de cada professor que desejar se cadastrar no sistema.
-- Classe TelaLogin: Conta com os métodos e chamadas de classes necessárias para a criação da tela de login, para entrar no sistema pegando os dados de cada professor que se cadastrou no sistema.
-- Classe TelaPrincipal: Tela principal armazena as chamadas da classes "Controlador", "CalendarioSemanal" e "JanelaCalendario", alocando as três classes dentro de um painel.
-No package dao estão contidas as classes DisciplinaDAO, DisciplinaDAOImpl, ProfessorDAO, ProfessorDAOImpl, Serializador e StringSerializer.
-- Nesse pacote é onde acontece toda a serialização dos dados de disciplina e professor e suas devidas implementações de envio de dados e leitura dos mesmos.
-No package model estão contidas as classes Disciplina, Professor e Laboratorio.
-- Classe Disciplina: Estão contidos os atributos de disciplinas, como nomeDisciplina e a chamada da classe Professor, juntamente com os gets e sets.
-- Classe Professor: Estão contidos os atributos de professor, como nome, matricula, senha e uma lista das disciplinas que são ministradas por esse professor, juntamente com os gets e sets.
-- Classe Laboratorio: Estão contidos um id de cada laboratório que está alocado nos blocos de horário e a chamada de uma lista de BlocosDeHorarios para serem feitos os agendamentos de horário.
+## 📚 **Sobre o Projeto**
+
+O objetivo deste projeto é criar um sistema de agendamento onde:
+
+- **Professores** podem realizar login, cadastrar suas disciplinas e agendar horários para o uso de laboratórios.
+- **Laboratórios** são disponibilizados para agendamento com horários predefinidos e as reservas de cada professor são visualizadas por todos.
+- O sistema inclui validação de login, cadastro e agendamento, com a visualização de horários disponíveis e ocupados em uma interface gráfica.
+
+---
+
+## 🚀 **Funcionalidades**
+
+- **Cadastro e Login**: Professores podem se cadastrar e fazer login para acessar o sistema.
+- **Agendamento de Laboratórios**: Professores podem agendar horários disponíveis.
+- **Visualização de Horários**: Todos os agendamentos feitos são visíveis para outros professores, indicando os horários ocupados.
+- **Validação de Dados**: O sistema valida os dados durante o cadastro e login para garantir que os campos estejam preenchidos corretamente.
+- **Interação com Calendário**: A interface exibe um calendário semanal onde é possível ver os horários livres (em verde) e ocupados (em vermelho).
+
+---
+
+## 🖥️ **Tecnologias Utilizadas**
+
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
+
+- **Java** ☕ (para o desenvolvimento da interface gráfica e a lógica do sistema)
+- **Swing** 🖼️ (para a construção da interface gráfica)
+- **Persistência de Dados** 📦 (armazenamento de dados de login e agendamentos)
+
+---
+
+## 🛠️ **Funcionalidades Implementadas**
+
+1. **Cadastro de Professor**: O professor insere suas informações (nome, matrícula e senha) para se cadastrar no sistema.
+2. **Login de Professor**: Após o cadastro, o professor pode acessar sua conta com matrícula e senha.
+3. **Visualização de Horários**: O sistema mostra uma tabela com horários livres e ocupados para cada laboratório.
+4. **Agendamento de Horários**: O professor pode agendar múltiplos horários para sua disciplina, com a opção de desmarcar caso seja necessário.
+5. **Persistência de Dados**: As informações de login, cadastro e agendamentos são salvas para serem acessadas em sessões futuras.
+
+---
+
+## 📂 **Estrutura de Arquivos**
+
+AgendamentoDeLaboratorio/ │ └── src/ │ └── ifpb/ │ └── edu/ │ └── br/ │ └── main/ │ ├── controller/ │ ├── Controlador.java │ ├── Dados.java │ ├── dao/ │ ├── DisciplinaDAO.java │ ├── DisciplinaDAOImpl.java │ ├── ProfessorDAO.java │ ├── ProfessorDAOImpl.java │ ├── Serializador.java │ ├── StringSerializer.java │ ├── model/ │ ├── Disciplina.java │ ├── Laboratorio.java │ ├── Professor.java │ └── view/ ├── BlocoDeHorario.java ├── BotaoAlocacao.java ├── CalendarioSemanal.java ├── GerenciadorDeTelas.java ├── InfoBloco.java ├── JanelaCalendario.java ├── TelaCalendario.java ├── TelaCadastro.java ├── TelaLogin.java └── TelaPrincipal.java
+
+---
+
+## 🤔 **Por Que Criar Esse Projeto?**
+
+Este projeto foi criado para:
+
+- Aplicar conceitos de Programação Orientada a Objetos (POO) em um sistema real.
+- Resolver o problema de agendamento e gerenciamento de horários de laboratórios de forma simples e eficiente.
+- Proporcionar uma experiência de aprendizado ao trabalhar com interfaces gráficas, persistência de dados e controle de acesso de usuários.
+- Melhorar minhas habilidades em desenvolvimento de sistemas utilizando Java e Swing.
+
+---
+
+🖤 **Obrigado por visitar este repositório!**
