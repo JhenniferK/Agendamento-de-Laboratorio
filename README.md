@@ -8,6 +8,7 @@ Requisitos Funcionais
 - O sistema deve permitir editar ou cancelar reservas.
 - Deve haver a persistência de dados para garantir que as informações de login e agendamentos sejam salvas.
 - Professores devem conseguir ver os horários reservados por outros professores.
+
 Requisitos Não Funcionais
 - O sistema deve ser amigável e de fácil uso, utilizando uma interface gráfica simples e intuitiva.
 - As informações de login e agendamento devem ser armazenadas de forma segura, utilizando persistência de dados.
