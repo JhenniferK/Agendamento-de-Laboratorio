@@ -59,4 +59,4 @@ Este projeto foi criado para:
 
 ---
 
-🖤 **Obrigado por visitar este repositório!**
+🖤 **Obrigada por visitar este repositório!**
