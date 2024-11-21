@@ -18,7 +18,7 @@ O objetivo deste projeto é criar um sistema de agendamento onde:
 - **Agendamento de Laboratório**: Professores podem agendar horários disponíveis.
 - **Visualização de Horários**: Todos os agendamentos feitos são visíveis para outros professores, indicando os horários ocupados.
 - **Validação de Dados**: O sistema valida os dados durante o cadastro e login para garantir que os campos estejam preenchidos corretamente.
-- **Interação com Calendário**: A interface exibe um calendário semanal onde é possível ver os horários livres (em verde) e ocupados (em vermelho).
+- **Interação com Calendário**: A interface exibe um calendário semanal onde é possível ver os horários livres (em tonalidade escura) e ocupados (em tonalidade clara).
 
 ---
 
