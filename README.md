@@ -6,8 +6,8 @@ Bem-vindo(a) ao meu repositório do **Projeto de Agendamento de Laboratório**! 
 
 O objetivo deste projeto é criar um sistema de agendamento onde:
 
-- **Professores** podem realizar login, cadastrar suas disciplinas e agendar horários para o uso de laboratórios.
-- **Laboratórios** são disponibilizados para agendamento com horários predefinidos e as reservas de cada professor são visualizadas por todos.
+- **Professores** podem realizar login, cadastrar suas disciplinas e agendar horários para o uso de laboratório.
+- **Laboratório** é disponibilizado para agendamento com horários predefinidos e as reservas de cada professor são visualizadas por todos.
 - O sistema inclui validação de login, cadastro e agendamento, com a visualização de horários disponíveis e ocupados em uma interface gráfica.
 
 ---
@@ -15,7 +15,7 @@ O objetivo deste projeto é criar um sistema de agendamento onde:
 ## 🚀 **Funcionalidades**
 
 - **Cadastro e Login**: Professores podem se cadastrar e fazer login para acessar o sistema.
-- **Agendamento de Laboratórios**: Professores podem agendar horários disponíveis.
+- **Agendamento de Laboratório**: Professores podem agendar horários disponíveis.
 - **Visualização de Horários**: Todos os agendamentos feitos são visíveis para outros professores, indicando os horários ocupados.
 - **Validação de Dados**: O sistema valida os dados durante o cadastro e login para garantir que os campos estejam preenchidos corretamente.
 - **Interação com Calendário**: A interface exibe um calendário semanal onde é possível ver os horários livres (em verde) e ocupados (em vermelho).
