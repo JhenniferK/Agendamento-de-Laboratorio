@@ -1,6 +1,6 @@
 # 📅 **Projeto de Agendamento de Laboratório**
 
-Bem-vindo(a) ao meu repositório do **Projeto de Agendamento de Laboratório**! Este projeto simula um sistema de agendamento de horários para laboratórios, permitindo que professores reservem horários para aulas em diferentes laboratórios de uma instituição. 💻
+Bem-vindo(a) ao meu repositório do **Projeto de Agendamento de Laboratório**! Este projeto simula um sistema de agendamento de horários para laboratórios, permitindo que professores reservem horários para aulas em um laboratório de uma instituição. 💻
 
 ## 📚 **Sobre o Projeto**
 
