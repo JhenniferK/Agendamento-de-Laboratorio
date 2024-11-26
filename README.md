@@ -10,8 +10,6 @@ O objetivo deste projeto é criar um sistema de agendamento onde:
 - **Laboratório** é disponibilizado para agendamento com horários predefinidos e as reservas de cada professor são visualizadas por todos.
 - O sistema inclui validação de login, cadastro e agendamento, com a visualização de horários disponíveis e ocupados em uma interface gráfica.
 
----
-
 ## 🚀 **Funcionalidades**
 
 - **Cadastro e Login**: Professores podem se cadastrar e fazer login para acessar o sistema.
@@ -19,8 +17,6 @@ O objetivo deste projeto é criar um sistema de agendamento onde:
 - **Visualização de Horários**: Todos os agendamentos feitos são visíveis para outros professores, indicando os horários ocupados.
 - **Validação de Dados**: O sistema valida os dados durante o cadastro e login para garantir que os campos estejam preenchidos corretamente.
 - **Interação com Calendário**: A interface exibe um calendário semanal onde é possível ver os horários livres (em tonalidade escura) e ocupados (em tonalidade clara).
-
----
 
 ## 🖥️ **Tecnologias Utilizadas**
 
@@ -30,8 +26,6 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - **Swing** 🖼️ (para a construção da interface gráfica)
 - **Persistência de Dados** 📦 (armazenamento de dados de login e agendamentos)
 
----
-
 ## 🛠️ **Funcionalidades Implementadas**
 
 1. **Cadastro de Professor**: O professor insere suas informações (nome, matrícula e senha) para se cadastrar no sistema.
@@ -40,13 +34,9 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 4. **Agendamento de Horários**: O professor pode agendar múltiplos horários para sua disciplina, com a opção de desmarcar caso seja necessário.
 5. **Persistência de Dados**: As informações de login, cadastro e agendamentos são salvas para serem acessadas em sessões futuras.
 
----
-
 ## 📂 **Estrutura de Arquivos**
 
 AgendamentoDeLaboratorio/ │ └── src/ │ └── ifpb/ │ └── edu/ │ └── br/ │ └── main/ │ ├── controller/ │ ├── Controlador.java │ ├── Dados.java │ ├── dao/ │ ├── DisciplinaDAO.java │ ├── DisciplinaDAOImpl.java │ ├── ProfessorDAO.java │ ├── ProfessorDAOImpl.java │ ├── Serializador.java │ ├── StringSerializer.java │ ├── model/ │ ├── Disciplina.java │ ├── Laboratorio.java │ ├── Professor.java │ └── view/ ├── BlocoDeHorario.java ├── BotaoAlocacao.java ├── CalendarioSemanal.java ├── GerenciadorDeTelas.java ├── InfoBloco.java ├── JanelaCalendario.java ├── TelaCalendario.java ├── TelaCadastro.java ├── TelaLogin.java └── TelaPrincipal.java
-
----
 
 ## 🤔 **Por Que Criar Esse Projeto?**
 
