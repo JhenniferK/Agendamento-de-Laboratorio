@@ -36,7 +36,35 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ## 📂 **Estrutura de Arquivos**
 
-AgendamentoDeLaboratorio/ │ └── src/ │ └── ifpb/ │ └── edu/ │ └── br/ │ └── main/ │ ├── controller/ │ ├── Controlador.java │ ├── Dados.java │ ├── dao/ │ ├── DisciplinaDAO.java │ ├── DisciplinaDAOImpl.java │ ├── ProfessorDAO.java │ ├── ProfessorDAOImpl.java │ ├── Serializador.java │ ├── StringSerializer.java │ ├── model/ │ ├── Disciplina.java │ ├── Laboratorio.java │ ├── Professor.java │ └── view/ ├── BlocoDeHorario.java ├── BotaoAlocacao.java ├── CalendarioSemanal.java ├── GerenciadorDeTelas.java ├── InfoBloco.java ├── JanelaCalendario.java ├── TelaCalendario.java ├── TelaCadastro.java ├── TelaLogin.java └── TelaPrincipal.java
+```plaintext
+AgendamentoDeLaboratorio/
+  └── src/ifpb/edu/br/main/
+      └── controller
+          ├── Controlador.java
+          ├── Dados.java
+      └── dao
+          ├── DisciplinaDAO.java
+          ├── DisciplinaDAOImpl.java
+          ├── ProfessorDAO.java
+          ├── ProfessorDAOImpl.java
+          ├── Serializador.java
+          ├── StringSerializer.java
+      └── model
+          ├── Disciplina.java
+          ├── Laboratorio.java
+          ├── Professor.java
+      └── view
+          ├── BlocoDeHorario.java
+          ├── BotaoAlocacao.java
+          ├── CalendarioSemanal.java
+          ├── GerenciadorDeTelas.java
+          ├── InfoBloco.java
+          ├── JanelaCalendario.java
+          ├── TelaCalendario.java
+          ├── TelaCadastro.java
+          ├── TelaLogin.java
+          ├── TelaPrincipal.java
+```
 
 ## 🤔 **Por Que Criar Esse Projeto?**
 
