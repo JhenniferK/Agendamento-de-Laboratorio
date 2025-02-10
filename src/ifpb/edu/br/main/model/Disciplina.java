@@ -6,9 +6,8 @@ public class Disciplina implements Serializable{
     private String nomeDisciplina;
     private Professor professor;
 
-    public Disciplina(String nome, Professor professor) {
+    public Disciplina(String nome) {
         this.nomeDisciplina = nome;
-        this.professor = professor;
     }
 
     public String getNomeDisciplina() { return nomeDisciplina; }
@@ -25,6 +24,6 @@ public class Disciplina implements Serializable{
 
     @Override
     public String toString() {
-        return nomeDisciplina;
+        return nomeDisciplina + " - " + professor.getNome();
     }
 }

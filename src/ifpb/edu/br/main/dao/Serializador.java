@@ -26,7 +26,8 @@ public class Serializador {
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
             oos.writeObject(dados);
         } catch (IOException e) {
-            System.out.println("Erro ao salvar dados: " + e.getMessage());
+            System.err.println("Erro ao salvar dados: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 

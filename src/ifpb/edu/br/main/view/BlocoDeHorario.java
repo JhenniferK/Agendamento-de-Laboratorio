@@ -7,6 +7,11 @@ public class BlocoDeHorario implements Serializable {
     private InfoBloco infoBloco = new InfoBloco();
 
     public BlocoDeHorario() {
+        for (int i = 0; i < bloco.length; i++) {
+            for (int j = 0; j < bloco[i].length; j++) {
+                bloco[i][j] = false;
+            }
+        }
     }
 
     public InfoBloco getInfoBloco() {

@@ -8,94 +8,67 @@ import ifpb.edu.br.main.view.CalendarioSemanal;
 import ifpb.edu.br.main.view.InfoBloco;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 public class Controlador implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private static volatile Controlador instancia;
+
+    private final ProfessorController professorController;
+    private final DisciplinaController disciplinaController;
     private Dados dados;
-    private Serializador serializador;
-    private static Controlador instancia;
+    private final Serializador serializador;
     private Professor usuarioLogado;
-    private BlocoDeHorario blocoDeHorario;
     private CalendarioSemanal calendario;
     private InfoBloco infoBloco;
 
     private Controlador() {
-        calendario = new CalendarioSemanal();
-        serializador = new Serializador();
-        dados = serializador.getDados();
+        this.dados = new Dados();
+        this.serializador = new Serializador();
+        this.professorController = new ProfessorController(dados, serializador);
+        this.disciplinaController = new DisciplinaController(dados, serializador);
+        this.calendario = new CalendarioSemanal();
     }
 
     public static Controlador getInstance() {
         if (instancia == null) {
-            System.out.println("Criando nova instancia..." + new Date());
-            instancia = new Controlador();
+            synchronized (Controlador.class) {
+                if (instancia == null) {
+                    instancia = new Controlador();
+                }
+            }
         }
         return instancia;
     }
 
-    public void addProfessor(Professor p) {
-        this.dados.getProfessoresList().add(p);
-        serializador.salvar();
-    }
-
-    public void addDisciplina(Disciplina d) {
-        this.dados.getDisciplinasList().add(d);
+    public void cadastrarProfessor(String nome, String matricula, String senha, List<Disciplina> disciplinas) {
+        Professor professor = new Professor(nome, matricula, senha, disciplinas);
+        professorController.addProfessor(professor);
         serializador.salvar();
     }
 
     public boolean validarLogin(String matricula, String senha) {
-        List<Professor> professoresAtualizados = dados.getProfessoresList();
-        Optional<Professor> resultado = professoresAtualizados.stream()
-                .filter(p -> p.getMatricula().equals(matricula) && p.getSenha().equals(senha))
-                .findFirst();
-
-        if (resultado.isPresent()) {
-            usuarioLogado = resultado.get();
-            return true;
-        }
-        return false;
+        return professorController.validarLogin(matricula, senha);
     }
 
     public boolean matriculaExistente(String matricula) {
-        return dados.getProfessoresList().stream()
-                .anyMatch(professor -> professor.getMatricula().equals(matricula));
+        return professorController.matriculaExistente(matricula);
     }
 
-    public boolean login(String matricula, String senha) {
-        if (validarLogin(matricula, senha)) {
-            return true;
-        }
-        return false;
+    public Professor getUsuarioLogado() { return usuarioLogado; }
+    public void setUsuarioLogado(Professor professor) { this.usuarioLogado = professor; }
+
+    public List<Disciplina> getDisciplinas() { return disciplinaController.getDisciplinas(); }
+    public List<Disciplina> getDisciplinasDoProfessorLogado() {
+        return getUsuarioLogado().getDisciplinas();
     }
 
-    public Professor getUsuarioLogado() {
-        return usuarioLogado;
-    }
-
-    public List<Professor> getProfessores() {
-        return dados.getProfessoresList();
-    }
-
-    public void setProfessores(List<Professor> professores) {
-        this.dados.setProfessoresList(professores);
-        serializador.salvar();
-    }
-
-    public List<Disciplina> getDisciplinas() {
-        return dados.getDisciplinasList();
-    }
-
+    public void addDisciplina(Disciplina d) { disciplinaController.addDisciplina(d); }
     public void setDisciplinas(List<Disciplina> disciplinas) {
-        this.dados.setDisciplinasList(disciplinas);
-        serializador.salvar();
+        disciplinaController.setDisciplinas(disciplinas);
     }
 
-    public CalendarioSemanal getCalendario() {
-        return calendario;
-    }
-
+    public CalendarioSemanal getCalendario() { return calendario; }
     public void setCalendario(CalendarioSemanal calendario) {
         this.calendario = calendario;
         serializador.salvar();
@@ -115,12 +88,14 @@ public class Controlador implements Serializable {
         }
     }
 
-    public InfoBloco getInfoBloco(){
-        return infoBloco;
-    }
+    public InfoBloco getInfoBloco() { return infoBloco; }
 
-    public void setInfoBloco(InfoBloco infoBloco){
+    public void setInfoBloco(InfoBloco infoBloco) {
         this.infoBloco = infoBloco;
         serializador.salvar();
+    }
+
+    public List<Professor> getProfessores() {
+        return professorController.getProfessores(); // Certifique-se de que esse método existe na classe ProfessorController
     }
 }

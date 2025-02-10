@@ -9,7 +9,7 @@ public class Professor implements Serializable {
     private String matricula;
     private String nome;
     private String senha;
-    protected List<Disciplina> disciplinas;
+    private List<Disciplina> disciplinas;
 
     public Professor(String matricula, String nome, String senha, List<Disciplina> disciplinas) {
         this.matricula = matricula;
@@ -55,20 +55,19 @@ public class Professor implements Serializable {
         return getNome() + " " + getMatricula();
     }
 
-    public Object getLogin(){
-        return null;
-    }
+    public Object getLogin() { return matricula; }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Professor professor)) return false;
-        return Objects.equals(getMatricula(), professor.getMatricula());
+        if (o == null || getClass() != o.getClass()) return false;
+        Professor professor = (Professor) o;
+        return matricula.equals(professor.matricula);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getMatricula());
+        return matricula.hashCode();
     }
 }
 

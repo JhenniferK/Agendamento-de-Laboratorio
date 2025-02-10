@@ -54,7 +54,7 @@ public class DisciplinaDAOImpl implements DisciplinaDAO {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             return (List<Disciplina>) ois.readObject();
         } catch (FileNotFoundException e) {
-            return new ArrayList<>(); // Retorna uma lista vazia se o arquivo não existir
+            return new ArrayList<>(); //Retorna uma lista vazia se o arquivo não existir
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
             return new ArrayList<>();

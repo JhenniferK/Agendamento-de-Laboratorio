@@ -18,7 +18,7 @@ public class BotaoAlocacao extends JButton {
 
     public void setDisciplina(String disciplina) {
         this.disciplina = disciplina;
-        this.setText("<html>Disciplina: " + disciplina);
+        this.setText("<html>Disciplina: " + disciplina + "<br>Professor: " + professor + "</html>");
     }
 
     public String getProfessor() {
@@ -27,6 +27,6 @@ public class BotaoAlocacao extends JButton {
 
     public void setProfessor(String professor) {
         this.professor = professor;
-        this.setText("<br>Professor:" + professor + "</html>");
+        this.setText("<html>Disciplina: " + disciplina + "<br>Professor: " + professor + "</html>");
     }
 }

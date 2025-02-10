@@ -11,4 +11,3 @@ public interface ProfessorDAO {
     Professor buscarProfessorPorMatricula(String matricula);
     List<Professor> listarProfessores();
 }
-

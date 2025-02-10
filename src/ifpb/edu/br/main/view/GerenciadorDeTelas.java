@@ -1,32 +1,20 @@
 package ifpb.edu.br.main.view;
 
-import ifpb.edu.br.main.controller.Controlador;
-import ifpb.edu.br.main.model.Professor;
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class GerenciadorDeTelas extends JFrame implements Serializable {
-    private Controlador controlador;
-    private List<Professor> professores;
     private TelaPrincipal telaPrincipal;
-    private TelaCadastro telaCadastro;
-    private TelaLogin telaLogin;
-    private JPanel painelPrincipal;
-    private CardLayout cardLayout;
+    private final JPanel painelPrincipal;
+    private final CardLayout cardLayout;
 
     public GerenciadorDeTelas() {
-        controlador = Controlador.getInstance();
-        professores = new ArrayList<>();
-
         cardLayout = new CardLayout();
         painelPrincipal = new JPanel(cardLayout);
 
-        telaLogin = new TelaLogin(this);
-        telaCadastro = new TelaCadastro(this);
+        TelaLogin telaLogin = new TelaLogin(this);
+        TelaCadastro telaCadastro = new TelaCadastro(this);
 
         painelPrincipal.add(telaLogin, "TelaLogin");
         painelPrincipal.add(telaCadastro, "TelaCadastro");
@@ -52,7 +40,5 @@ public class GerenciadorDeTelas extends JFrame implements Serializable {
         cardLayout.show(painelPrincipal, nomeDaTela);
     }
 
-    public static void main(String[] args) {
-        new GerenciadorDeTelas();
-    }
+    public static void main(String[] args) { new GerenciadorDeTelas(); }
 }

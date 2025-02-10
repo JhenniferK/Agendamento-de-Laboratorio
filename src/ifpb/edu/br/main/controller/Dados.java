@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Dados implements Serializable {
-   private List<Professor> professoresList;
-   private List<Disciplina> disciplinasList;
+    private List<Professor> professoresList;
+    private List<Disciplina> disciplinasList;
 
     public Dados(){
         professoresList = new ArrayList<>();

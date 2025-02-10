@@ -14,8 +14,9 @@ public class CalendarioSemanal implements Serializable {
         for (int i = 0; i < 52; i++) {
             blocosDeHorario.add(new BlocoDeHorario());
         }
+
         Calendar calendar = Calendar.getInstance();
-        semanaAtual = calendar.get(3) - 1;
+        semanaAtual = calendar.get(Calendar.WEEK_OF_YEAR) - 1;
     }
 
     public BlocoDeHorario getBlocoAtual() {
@@ -41,13 +42,13 @@ public class CalendarioSemanal implements Serializable {
     public String[] getDiasDaSemana() {
         String[] dias = {"SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA"};
         Calendar tempCalendar = Calendar.getInstance();
-        tempCalendar.set(3, semanaAtual + 1);
-        tempCalendar.set(7, 2);
+        tempCalendar.set(Calendar.WEEK_OF_YEAR, semanaAtual + 1);
+        tempCalendar.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
 
         for (int i = 0; i < dias.length; i++) {
             String diaComNumero = dias[i] + " - " + tempCalendar.get(Calendar.DAY_OF_MONTH);
             dias[i] = diaComNumero;
-            tempCalendar.add(5, 1);
+            tempCalendar.add(Calendar.DAY_OF_MONTH, 1);
         }
 
         return dias;
@@ -55,11 +56,11 @@ public class CalendarioSemanal implements Serializable {
 
     public void atualizarMes(int mes) {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(2, mes);
-        calendar.set(5, 1);
-        calendar.set(1, Calendar.getInstance().get(1));
+        calendar.set(Calendar.MONTH, mes);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        calendar.set(Calendar.YEAR, Calendar.getInstance().get(Calendar.YEAR));
 
-        semanaAtual = calendar.get(3) - 1;
+        semanaAtual = calendar.get(Calendar.WEEK_OF_YEAR) - 1;
     }
 
     public void setSemanaAtual(int semana) {
@@ -75,7 +76,6 @@ public class CalendarioSemanal implements Serializable {
         calendario.set(Calendar.MONTH, mes);
         calendario.set(Calendar.DAY_OF_MONTH, 1);
 
-        //Atualiza a semana atual para a primeira semana do mês
-        this.setSemanaAtual(calendario.get(Calendar.WEEK_OF_YEAR));
+        this.setSemanaAtual(calendario.get(Calendar.WEEK_OF_YEAR) - 1);
     }
 }

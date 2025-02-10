@@ -28,12 +28,15 @@ public class ProfessorDAOImpl implements ProfessorDAO {
 
     @Override
     public Professor buscarProfessorPorMatricula(String matricula) {
-        return null;
+        return professores.stream()
+                .filter(professor -> professor.getMatricula().equals(matricula))
+                .findFirst()
+                .orElse(null);
     }
 
     @Override
     public List<Professor> listarProfessores() {
-        return null;
+        return professores;
     }
 
     private void salvarProfessores() throws IOException {
