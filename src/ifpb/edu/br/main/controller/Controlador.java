@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Controlador implements Serializable {
     private static final long serialVersionUID = 1L;
-    private static volatile Controlador instancia;
+    private static Controlador instancia;
 
     private final ProfessorController professorController;
     private final DisciplinaController disciplinaController;

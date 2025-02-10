@@ -3,7 +3,6 @@ package ifpb.edu.br.main.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Professor implements Serializable {
     private String matricula;
@@ -22,40 +21,18 @@ public class Professor implements Serializable {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getMatricula(){
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
+    public String getMatricula() { return matricula; }
 
     public List<Disciplina> getDisciplinas() {
         return disciplinas;
     }
 
-    public void setDisciplinas(List<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+    public String getSenha() { return senha; }
 
     @Override
     public String toString() {
         return getNome() + " " + getMatricula();
     }
-
-    public Object getLogin() { return matricula; }
 
     @Override
     public boolean equals(Object o) {
@@ -66,8 +43,5 @@ public class Professor implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        return matricula.hashCode();
-    }
+    public int hashCode() { return matricula.hashCode(); }
 }
-

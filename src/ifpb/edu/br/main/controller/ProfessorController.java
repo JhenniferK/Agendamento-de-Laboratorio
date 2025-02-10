@@ -14,7 +14,6 @@ public class ProfessorController {
     public ProfessorController(Dados dados, Serializador serializador) {
         this.dados = dados;
         this.serializador = serializador;
-        this.controlador = controlador;
     }
 
     public void addProfessor(Professor p) {

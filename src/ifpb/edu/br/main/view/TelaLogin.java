@@ -10,9 +10,6 @@ import java.io.Serializable;
 public class TelaLogin extends JPanel implements Serializable {
     private final Controlador controlador;
     private final GerenciadorDeTelas gerenciadorDeTelas;
-    private JTextField textMatricula;
-    private JPasswordField textSenha;
-    private JButton btnEntrar;
     private JButton btnCadastrar;
 
     private static final Color BUTTON_COLOR = new Color(0x9D1888);
@@ -27,6 +24,9 @@ public class TelaLogin extends JPanel implements Serializable {
     }
 
     private void configurar() {
+        JButton btnEntrar;
+        JPasswordField textSenha;
+        JTextField textMatricula;
         this.setBackground(new Color(0xFFF8B8D9, true));
         this.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
